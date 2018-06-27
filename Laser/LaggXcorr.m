@@ -14,7 +14,7 @@ test14 = table2array(test4);
 % also reduces number of points by sampling 1 in 20 to help with noise 
 tfull1 = test11(:,1);
 yfull1 = test11(:,2);
-t1 = tfull1(1:20:end,:);
+t1 = tfull1(1:15:end,:);
 y1 = yfull1(1:20:end,:);
 tfull2 = test12(:,1);
 yfull2 = test12(:,2);
