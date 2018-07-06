@@ -2,39 +2,41 @@
 %stuart smyth
 %25 jun 18
                                                                                                                                                                                                                                                                                                              
-%create arduino object 
 
+ %%
+v = zeros(500,1);
+t = seconds(v);
+t0 = datetime('now');
+for ii = 1:500
+    v(ii) = readVoltage(a,'A0');
+    t(ii) = datetime('now')- t0;
+end
+%%   
+    plot (t,v)
 
-%turn LED on and off
+   
+   
+ %%  
+   a_pin = 0;
 
-   
-% brighten leds
-writeDigitalPin(a,'D11',1);
-   time = 200;
-   while time > 0
-      LED_status = readDigitalPin(a, 'D12');
-      if LED_status == 0
-         writeDigitalPin(a, 'D11', 1);
-      else
-          % Change duration to zero to mute the speaker
-        writeDigitalPin(a, 'D11', 0);
-      end
+fs = 4;   % sampling frequency (samplings per second)
+mt = 20;  % time for measurements
 
-     time = time - 1;
-     pause(0.1);
-   end
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+ind = 1;
+nind = 1;
+last_beep = 0;
+tic;
+while toc < mt
+
+    time(ind) = toc;
+    v(ind) = a.analogRead(a_pin);
+
+    % wait for appropriate time for next measurement
+    while( nind == ind )
+        nind = floor(toc*fs) + 1;
+    end
+    ind = nind;
+end 
    
    
    
