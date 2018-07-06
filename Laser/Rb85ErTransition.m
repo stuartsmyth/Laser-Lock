@@ -12,7 +12,7 @@
 %convert and transform into and array called "test".
 
 load ('ErrorTestFiles.mat');
-test = table2array(errors1);
+test = table2array(errors2);
 
 % takes array "test" and splits up the data into x-axis(time) variable "t"
 % and y-axis(voltage of PZT) variable "y".Need to decide what the max num
