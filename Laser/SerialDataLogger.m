@@ -12,8 +12,8 @@ plotTitle = 'Serial Data Log';  % plot title
 xLabel = 'Elapsed Time (s)';    % x-axis label
 yLabel = 'Data';                % y-axis label
 plotGrid = 'on';                % 'off' to turn off grid
-min = 1000;                     % set y-min
-max = 3000;                      % set y-max
+min = 1800;                     % set y-min
+max = 2400;                      % set y-max
 scrollWidth = 10;               % display period in plot, plot entire data log if <= 0
 delay = .000015;                % make sure sample faster than resolution
  
