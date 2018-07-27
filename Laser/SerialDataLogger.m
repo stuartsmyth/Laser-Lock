@@ -12,10 +12,10 @@ plotTitle = 'Serial Data Log';  % plot title
 xLabel = 'Elapsed Time (s)';    % x-axis label
 yLabel = 'Data';                % y-axis label
 plotGrid = 'on';                % 'off' to turn off grid
-min = 1800;                     % set y-min
-max = 2400;                      % set y-max
+min = 0;                     % set y-min
+max = 4000;                      % set y-max
 scrollWidth = 10;               % display period in plot, plot entire data log if <= 0
-delay = .000015;                % make sure sample faster than resolution
+delay = 0.0002;                % make sure sample faster than resolution
  
 %Define Function Variables
 time = 0;
@@ -39,7 +39,7 @@ grid(plotGrid);
 s = serial(serialPort)
 set(s,'DataBits',8);
 set(s,'StopBits',1);
-set(s,'BaudRate',115200);
+set(s,'BaudRate',9600);
 set(s,'Parity','none');
 disp('Close Plot to End Session');
 fopen(s);
