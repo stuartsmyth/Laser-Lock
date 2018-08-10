@@ -10,7 +10,7 @@ g = gfull(1:20:end,:);  % reduces array to 6250 samples
 
 [ ypks, ytim, epks, etim] = find_peaks_iain(t,y,g);
 %%
-f1 = figure(1);
+f1 = figure();
 a1 = axes;
 hold off;
 plot(t,y);
@@ -21,7 +21,7 @@ for n=1:length(ypks)
 end
 %% plot(ytim, ypks, 'o');
 
-f2 = figure(2);
+f2 = figure();
 a2 = axes;
 hold off;
 plot(t,g);
