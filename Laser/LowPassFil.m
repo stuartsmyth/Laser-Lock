@@ -24,10 +24,10 @@ y = yfull(1:20:end,:);  % reduces array to 6250 samples
 g = gfull(1:20:end,:);  % reduces array to 6250 samples
 
 %data is still quite noisey so using the built in MATLAB function 'smooth'
-%with 'lowess'( Local regression using weighted linear least squares and a
+%yy = smooth(y,'lowess'); with 'lowess'( Local regression using weighted linear least squares and a
 %1st degree polynomial model).
 
-yy = smooth(y,'lowess'); 
+
 
 % use the 'gradient' function to calculate the 1st derivative of y and g
 % then the 2nd derivative of y
