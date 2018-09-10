@@ -19,7 +19,9 @@ subplot(3,1,1),plot(time,data)
 %with 'lowess'( Local regression using weighted linear least squares and a
 %1st degree polynomial model).
 
-yy = sgolayfilt(data,2,51);
+%%yy = sgolayfilt(data,2,21);
+yy = smooth(y,'lowess');
+
 % use the 'gradient' function to calculate the 1st derivative of y
 % then the 2nd derivative of y
 subplot(3,1,2),plot(time,yy)

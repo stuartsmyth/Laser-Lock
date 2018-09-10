@@ -24,5 +24,5 @@ void loop() {
   i++;
   if(i == 120)
     i = 0;
-   delayMicroseconds(500);
+   delayMicroseconds(700);
 }
