@@ -11,7 +11,7 @@
 %table.
 
 load ('ErrorTestFiles.mat');
-test = table2array(T0004ALL);
+test = table2array(errors2);
 
 %takes array "errors#" and splits up the data into time variable "t"
 % voltage of PZT, variable "y" and error signal voltage, variable g.
@@ -58,23 +58,37 @@ Yflip = Y.*-1;
 %interest in plots. Also give the extact values in terms of t and y of the
 %transistions which could be usefull for controlling laser at later stage.
 
-[ypks,ytim] = findpeaks(Yflip,t,'MinPeakProminence',0.0001);
+[ypks,ytim] = findpeaks(Yflip,t,'MinPeakProminence',0.00004);
 [epks,etim] = findpeaks(G,t,'MinPeakProminence',0.006);
 
 %Plot of filtered signals versus time with peaks marked
-figure()
-subplot(2,1,1),plot(t,y)
-subplot(2,1,2),plot(t,g)
-
-figure()
-subplot(2,1,1),plot(t,yy)
-subplot(2,1,2),plot(t,gg)
 
 figure()
 subplot(3,1,1),plot(t,yy)
-subplot(3,1,2),plot(t,gradY)
-subplot(3,1,3),plot(t,Yflip,ytim,ypks,'o m')
+title('y')
+xlabel('time(s)')
+ylabel('pzt voltage(v)')
+subplot(3,1,2),plot(t,gg)
+title('dy/dt')
+xlabel('time(s)')
+ylabel('pzt voltage(v)')
+subplot(3,1,3),plot(t,Yflip)
+title('d2y/dy2')
+xlabel('time(s)')
+ylabel('pzt voltage(v)')
 
+figure()
+subplot(2,1,1),plot(t,grad2Y);
+xlabel('time(s)')
+ylabel('pzt voltage(v)')
+subplot(2,1,2),plot(t,Yflip);
+xlabel('time(s)')
+ylabel('pzt voltage(v)')
+
+figure()
+plot(t,Yflip,ytim,ypks,'o m');
+xlabel('time(s)')
+ylabel('pzt voltage(v)')
 
 % difference between peaks
 %times = etim + 0.05;

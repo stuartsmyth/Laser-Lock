@@ -5,7 +5,7 @@ unsigned long stop_time;
 
 void setup() {
   // put your setup code here, to run once:
-Serial.begin(112500); //setup serial port at given 
+Serial.begin(9600); //setup serial port at given 
 REG_ADC_MR = (REG_ADC_MR & 0xFFFFFF0F) | 0x00000080; //enable FREERUN mode
 analogReadResolution(12);
 }

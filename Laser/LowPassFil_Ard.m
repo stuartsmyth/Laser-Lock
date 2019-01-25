@@ -3,27 +3,15 @@
 %27 Jul 18
 
 
-
-%Data is imported from saved .mat file
-%%
-%clear all
-%clc
-
-
 %%
 t = time;
 y = data;
 figure()
 subplot(3,1,1),plot(time,data)
-%data is still quite noisey so using the built in MATLAB function 'smooth'
-%with 'lowess'( Local regression using weighted linear least squares and a
-%1st degree polynomial model).
+%data is still quite noisey so using the built in MATLAB func 'sgolayfilt'
 
-%%yy = sgolayfilt(data,2,21);
-yy = smooth(y,'lowess');
+yy = sgolayfilt(data,2,21);
 
-% use the 'gradient' function to calculate the 1st derivative of y
-% then the 2nd derivative of y
 subplot(3,1,2),plot(time,yy)
 %%
 % use the 'gradient' function to calculate the 1st derivative of y

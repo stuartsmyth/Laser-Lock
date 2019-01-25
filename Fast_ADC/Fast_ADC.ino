@@ -5,20 +5,6 @@ unsigned long values[23000];
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  
-  //REG_ADC_MR = (REG_ADC_MR & 0xFFF0FFFF) | 0x00020000;//sets startup time of ADC
-
-  //The normal adc startup time
-  //define ADC_STARTUP_NORM     40
-  //The fast adc startup time
-  //define ADC_STARTUP_FAST     12
-  //adc_init(ADC, SystemCoreClock, ADC_FREQ_MAX, ADC_STARTUP_FAST);
-
-
-  //REG_ADC_MR = (REG_ADC_MR & 0xFFFFFF0F) | 0x00000080; //enable FREERUN mode
-  //analogReadResolution(12);
-
-  // adc_init(ADC, SystemCoreClock, ADC_FREQ_MAX, ADC_STARTUP_NORM);
 
   
   ADC->ADC_MR |= 0x80;  //set free running mode on ADC
@@ -48,9 +34,3 @@ void loop() {
 
   delay(10000);  // 20 sec delay between loops
 }
-
-
-
-
-
-

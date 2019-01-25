@@ -37,15 +37,16 @@ G = filter(b,a,Fts);
 
 % plot of y, dy/dt vs time
 figure(1)
-subplot(2,1,1), plot(t,yy,tim,pks,'o m')
+%subplot(2,1,1); 
+plot(t,yy,tim,pks,'o m')
 title('Pzt vs time');
 xlabel('time')
 ylabel('y')
 %axis([ -0.044 -0.036 -0.2 0.3]);
-subplot(2,1,2), plot (t,G);
-title('1st derivative');
-xlabel('time')
-ylabel('dy/dt')
+%subplot(2,1,2), plot (t,G);
+%title('1st derivative');
+%xlabel('time')
+%ylabel('dy/dt')
 %axis([ -0.044 -0.036 -0.015 0.01]);
 
 
